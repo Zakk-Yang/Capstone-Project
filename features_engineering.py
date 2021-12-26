@@ -1,8 +1,8 @@
 import pandas as pd
 from sklearn import preprocessing
 from functions import gain, loss
-
-
+import requests
+from bs4 import BeautifulSoup
 # Relative Strength Index
 def rsi(stock):    
     # Create a list, fill first 14 values with 'None'
