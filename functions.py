@@ -88,7 +88,7 @@ def evaluation(X, y, model, n_preds=10, random=True, show_graph=True):
         plt.bar(range(n_preds), y_pred[:], width=.7, alpha=.6, color="#ff4e97", label="Predicted")
         plt.axhline(0, color="#333333", lw=.8)
         plt.legend(loc=1)
-        plt.title('Daily Return Prediction', fontSize=15)
+        plt.title('Daily Return Prediction', fontsize=15)
         plt.show()
     
     print('MSE:', mean_squared_error(y_true, y_pred))

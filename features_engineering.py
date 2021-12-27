@@ -3,6 +3,7 @@ from sklearn import preprocessing
 from functions import gain, loss
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
 # Relative Strength Index
 def rsi(stock):    
     # Create a list, fill first 14 values with 'None'
@@ -50,7 +51,12 @@ def ma7(stock):
 # Moving Average (21 days period)  
 def ma21(stock):
     return stock.Close.rolling(21).mean()
-    
+
+
+def ema50(stock):
+    return stock.Close.ewm(50).mean()
+
+
 def momentum(data, n_days):
     m = [None for i in range(n_days)]    
     for i in range(len(data) - n_days):
