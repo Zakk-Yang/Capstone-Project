@@ -48,6 +48,10 @@ def stock_charts(stock):
     plt.bar(down.index, down.Close - down.Open, width, bottom=down.Open, color=down_color)
     plt.bar(down.index, down.High - down.Open, width2, bottom=down.Open, color=down_color)
     plt.bar(down.index, down.Low - down.Close, width2, bottom=down.Close, color=down_color)
+    # plot EMA50
+    plt.plot(stock.index, stock.EMA50, color='#ad6eff', label='EMA50')
+    ax0.legend(loc="upper right")
+
     # plt.xticks([])
     plt.tick_params('x', labelbottom=False)
 

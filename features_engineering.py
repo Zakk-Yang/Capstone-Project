@@ -34,7 +34,8 @@ def macd(stock):
     exp2 = stock.Close.ewm(span=26, adjust=False).mean()
     macd = exp1-exp2
     signal = macd.ewm(span=9, adjust=False).mean()
-    return macd, signal
+    diff = macd-signal
+    return macd, signal,diff
  
 # Bollinger Bands    
 def bollinger_bands(stock, window=21):
@@ -52,9 +53,6 @@ def ma7(stock):
 def ma21(stock):
     return stock.Close.rolling(21).mean()
 
-
-def ema50(stock):
-    return stock.Close.ewm(50).mean()
 
 
 def momentum(data, n_days):
